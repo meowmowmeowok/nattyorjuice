@@ -14,7 +14,6 @@ const portraits = [
   { id: 13, src: "assets/images/juiced13.jpg" },
   { id: 14, src: "assets/images/juiced14.jpg" },
   { id: 15, src: "assets/images/juiced15.webp" },
-  { id: 16, src: "assets/images/juiced16.jpeg" },
   { id: 18, src: "assets/images/juiced18.jpg" },
   { id: 20, src: "assets/images/juiced20.avif" }
 ];
