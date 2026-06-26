@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Natty or Juice quiz about detecting makeup.">
+    <title>Natty or Juice</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Site header">
+        <div class="brand">Natty or Juice?</div>
+      </header>
+
+      <main class="app" id="app">
+        <section class="intro-band" aria-labelledby="site-title">
+          <h1 id="site-title">Can you tell if these 20 women are wearing makeup?</h1>
+          <button class="start-button" id="start-button" type="button">Start quiz</button>
+        </section>
+
+        <section class="quiz-layout" id="quiz-screen" hidden aria-live="polite">
+          <div class="photo-panel">
+            <div class="photo-frame">
+              <img id="quiz-image" src="" alt="">
+            </div>
+          </div>
+
+          <aside class="control-panel" aria-label="Quiz controls">
+            <div class="question-meta">
+              <p id="question-count">01 / 20</p>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="vote-grid">
+              <button class="choice-button" id="natty-button" type="button" data-choice="natty">
+                <span>NATTY</span>
+              </button>
+              <button class="choice-button is-primary" id="juice-button" type="button" data-choice="juice">
+                <span>JUICE</span>
+              </button>
+            </div>
+          </aside>
+        </section>
+
+        <section class="result-screen" id="result-screen" hidden aria-live="polite">
+          <div class="result-main">
+            <p class="eyebrow">The reveal</p>
+            <h2 id="score-line">0 / 20</h2>
+            <p class="result-copy">
+              They are all wearing makeup!
+            </p>
+          </div>
+          <div class="result-actions">
+            <button class="text-button" id="review-button" type="button">Review images</button>
+            <button class="text-button is-dark" id="restart-button" type="button">Play again</button>
+          </div>
+        </section>
+
+        <section class="review-screen" id="review-screen" hidden aria-live="polite">
+          <div class="review-header">
+            <div>
+              <p class="eyebrow">Review</p>
+              <h2 id="review-title">Image 01</h2>
+            </div>
+            <button class="text-button" id="back-to-result-button" type="button">Back to score</button>
+          </div>
+
+          <div class="review-layout">
+            <div class="photo-panel">
+              <div class="photo-frame">
+                <img id="review-image" src="" alt="">
+              </div>
+            </div>
+
+            <aside class="control-panel review-panel" aria-label="Review controls">
+              <p class="review-choice" id="review-choice">You picked NATTY</p>
+              <p class="review-answer">Correct answer: JUICE</p>
+              <div class="review-nav">
+                <button class="icon-button" id="previous-review-button" type="button" aria-label="Previous image">
+                  <span aria-hidden="true">&larr;</span>
+                </button>
+                <button class="icon-button" id="next-review-button" type="button" aria-label="Next image">
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
