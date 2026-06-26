@@ -38,6 +38,7 @@ const reviewTitle = document.querySelector("#review-title");
 const reviewChoice = document.querySelector("#review-choice");
 const previousReviewButton = document.querySelector("#previous-review-button");
 const nextReviewButton = document.querySelector("#next-review-button");
+const choiceButtons = document.querySelectorAll("[data-choice]");
 
 let quizOrder = [];
 let answers = [];
@@ -86,10 +87,17 @@ function renderQuestion() {
   const portrait = quizOrder[currentIndex];
   const visibleIndex = formatIndex(currentIndex);
 
+  clearChoiceFocus();
   quizImage.src = portrait.src;
   quizImage.alt = `Portrait ${currentIndex + 1} of ${TOTAL_IMAGES}`;
   questionCount.textContent = `${visibleIndex} / ${TOTAL_IMAGES}`;
   progressFill.style.width = `${((currentIndex + 1) / TOTAL_IMAGES) * 100}%`;
+}
+
+function clearChoiceFocus() {
+  choiceButtons.forEach((button) => {
+    button.blur();
+  });
 }
 
 function submitAnswer(choice) {
@@ -137,7 +145,7 @@ function renderReview() {
   nextReviewButton.disabled = reviewIndex === answers.length - 1;
 }
 
-document.querySelectorAll("[data-choice]").forEach((button) => {
+choiceButtons.forEach((button) => {
   button.addEventListener("click", () => {
     submitAnswer(button.dataset.choice);
   });

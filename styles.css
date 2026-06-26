@@ -106,10 +106,12 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 28px;
   border-bottom: 1px solid var(--line);
   padding: 48px 24px;
   background: rgba(251, 251, 248, 0.88);
+  text-align: center;
 }
 
 .eyebrow,
@@ -156,7 +158,8 @@ img {
 .review-layout {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  grid-template-columns: minmax(0, 430px) minmax(280px, 340px);
+  justify-content: center;
   border-bottom: 1px solid var(--line);
   background: rgba(251, 251, 248, 0.7);
 }
@@ -253,7 +256,15 @@ img {
   font-weight: 900;
 }
 
-.choice-button:hover,
+.choice-button:hover {
+  color: var(--fg);
+  background: var(--bg);
+  border-color: var(--fg);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.choice-button:active,
 .choice-button:focus-visible {
   color: var(--white);
   background: var(--natty);
@@ -262,7 +273,7 @@ img {
   transform: translateY(-1px);
 }
 
-.choice-button.is-primary:hover,
+.choice-button.is-primary:active,
 .choice-button.is-primary:focus-visible {
   background: var(--juice);
   border-color: var(--juice);
