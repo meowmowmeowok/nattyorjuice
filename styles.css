@@ -281,48 +281,60 @@ img {
 
 .result-screen {
   flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  padding: 48px 24px;
   border-bottom: 1px solid var(--line);
   background: rgba(251, 251, 248, 0.86);
+  text-align: center;
 }
 
 .result-main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 48px 24px;
-  border-right: 1px solid var(--line);
+  max-width: 980px;
 }
 
 .result-main h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 13rem;
+  font-size: 9rem;
   line-height: 0.86;
   font-weight: 500;
 }
 
 .result-copy {
-  max-width: 620px;
-  margin: 28px 0 0;
-  color: var(--muted);
-  font-size: 1.2rem;
-  line-height: 1.45;
+  max-width: 920px;
+  margin: 26px 0 0;
+  color: var(--fg);
+  font-family: "Labrada Light", Georgia, "Times New Roman", serif;
+  font-size: 5.7rem;
+  line-height: 0.96;
+  font-weight: 300;
 }
 
 .result-actions {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-  padding: 24px;
+  width: min(100%, 540px);
 }
 
 .text-button {
   min-height: 54px;
   padding: 0 18px;
   font-weight: 800;
+}
+
+.result-actions .text-button {
+  flex: 1;
+  min-width: 190px;
 }
 
 .text-button:hover,
@@ -435,13 +447,11 @@ img {
   }
 
   .quiz-layout,
-  .review-layout,
-  .result-screen {
+  .review-layout {
     grid-template-columns: 1fr;
   }
 
-  .photo-panel,
-  .result-main {
+  .photo-panel {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -460,11 +470,15 @@ img {
   }
 
   .result-actions {
-    padding: 18px;
+    width: min(100%, 460px);
   }
 
   .result-main h2 {
     font-size: 7rem;
+  }
+
+  .result-copy {
+    font-size: 2.75rem;
   }
 
   .review-header {
@@ -527,6 +541,19 @@ img {
 
   .result-main h2 {
     font-size: 4.5rem;
+  }
+
+  .result-copy {
+    font-size: 1.8rem;
+    line-height: 1.02;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .result-actions .text-button {
+    width: 100%;
   }
 
   .choice-button {
